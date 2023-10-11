@@ -11,10 +11,7 @@ jobs:
     - name: send slack notif
       uses: slackapi/slack-github-action@v1.24.0
       with:
-        payload: |
-          {
-            "key": "value",
-            "foo": "bar"
-          }
+        channel-id: "T04U7HS1CKA"
+        slack-message: "Testing message"
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_APP_WEBHOOK }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_APP_TOKEN }}
