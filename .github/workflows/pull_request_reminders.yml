@@ -1,0 +1,21 @@
+name: SacK Notification Workflow
+
+on:
+  pull_request:
+    types: [review_requested]
+
+jobs:
+  pull_request_slack_notification:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: send slack notif
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        payload: |
+          {
+            "key": "value",
+            "foo": "bar"
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_APP_WEBHOOK }}
