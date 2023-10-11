@@ -1,8 +1,7 @@
 name: SacK Notification Workflow
 
 on:
-  pull_request:
-    types: [review_requested]
+  push:
 
 jobs:
   pull_request_slack_notification:
